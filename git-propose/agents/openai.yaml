@@ -1,0 +1,4 @@
+interface:
+  display_name: "Git Propose"
+  short_description: "Review git changes and propose commit plans/messages"
+  default_prompt: "Analyze staged tracked, unstaged tracked, and untracked changes, then propose a safe, reviewable commit plan and Conventional Commit messages using the exact section headings and order from SKILL.md."

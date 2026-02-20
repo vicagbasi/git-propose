@@ -22,5 +22,8 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install validator dependencies
+        run: python3 -m pip install --upgrade pip pyyaml
+
       - name: Validate git-propose skill
         run: python3 scripts/quick_validate.py git-propose

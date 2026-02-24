@@ -66,6 +66,7 @@ Required content inside those sections:
   - Intent / Scope (no file paths)
   - Suggested staging (by intent, no file paths)
   - Full commit message: title + blank line + body + optional footers
+  - Files included (required): explicit file path list to stage for the commit (not part of commit message)
 - Build-Mode Notes:
   - Explicit assumptions
   - Ask clarifying questions only for real risk
@@ -96,6 +97,9 @@ Use this exact Markdown skeleton:
   - Body:
     - `Body line 1`
     - `Body line 2`
+ - Files included:
+   - `path/to/file.ext`
+   - `path/to/other.ext`
 
 ## Build-Mode Notes
 - Explicit assumptions: ...
@@ -123,6 +127,7 @@ Use this exact Markdown skeleton:
 - Insert one blank line between subject and body.
 - Write body around 72-char wraps; explain why, approach, and tradeoffs.
 - Avoid file paths and line references in commit body.
+- File paths are allowed only in the per-commit `Files included` section.
 - Add optional footers (`Fixes #123`, `BREAKING CHANGE: ...`) when relevant.
 
 ## Ambiguity Handling

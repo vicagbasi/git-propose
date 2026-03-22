@@ -65,7 +65,7 @@ Required content inside those sections:
 - Commit Proposals:
   - Intent / Scope (no file paths)
   - Suggested staging (by intent, no file paths)
-  - Full commit message: title + blank line + body + optional footers
+  - Full commit message: render as one Markdown code block containing title + blank line + body + optional footers
   - Files included (required): explicit file path list to stage for the commit (not part of commit message)
 - Build-Mode Notes:
   - Explicit assumptions
@@ -93,13 +93,20 @@ Use this exact Markdown skeleton:
 - Intent / Scope: ...
 - Suggested staging: ...
 - Full commit message:
-  - Subject: `type(scope): Subject`
-  - Body:
-    - `Body line 1`
-    - `Body line 2`
- - Files included:
-   - `path/to/file.ext`
-   - `path/to/other.ext`
+  ```md
+  type(scope): Subject
+
+  Body line 1
+  Body line 2
+  Body line 3
+  Body line 4
+  Body line 5
+
+  Optional-Footer: value
+  ```
+  - Files included:
+    - `path/to/file.ext`
+    - `path/to/other.ext`
 
 ## Build-Mode Notes
 - Explicit assumptions: ...
@@ -126,6 +133,9 @@ Use this exact Markdown skeleton:
 - Keep subject near 50 chars (can stretch when clarity requires).
 - Insert one blank line between subject and body.
 - Write body around 72-char wraps; explain why, approach, and tradeoffs.
+- Prefer 3-5 body lines for clarity; use up to 7 only if absolutely necessary to express the content being committed.
+- Render the entire proposed commit message as one Markdown code block in the commit proposal output.
+- Put optional footers inside that same code block after a blank line.
 - Avoid file paths and line references in commit body.
 - File paths are allowed only in the per-commit `Files included` section.
 - Add optional footers (`Fixes #123`, `BREAKING CHANGE: ...`) when relevant.

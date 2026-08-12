@@ -1,12 +1,16 @@
 interface:
   display_name: "Git Propose"
-  short_description: "Plan atomic commits safely with mandatory 5-10 line bodies"
+  short_description: "Plan atomic commits safely with mandatory 5-10 line idiomatic bodies"
   default_prompt: >
     Inspect the requested uncommitted changes and return an evidence-based,
     read-only commit plan. Keep dependent changes together, assign exact
     paths or hunks, flag safety and staging risks, order commits by dependency,
-    and for EVERY commit emit Conventional Commit title + blank line + MANDATORY
-    5-10 line body (72-char wrap, distinct what/why/how/tradeoffs/validation;
-    never title-only, never <5 lines, no file paths in body, count before emit).
-    Do not mutate Git unless I give an unambiguous follow-up approval of this exact
-    plan; then revalidate first.
+    and for EVERY commit emit Conventional Commit title (~50 chars, hard 72,
+    Capitalized, no period, imperative "If applied, this commit will …") + blank
+    line + MANDATORY 5-10 line body hard-wrapped at 72, blank-line-separated
+    paragraphs/bullets (pyramid: problem before → what changed after → why this
+    way vs alternatives → side effects/risks → validation; what+why vs how, no
+    file paths, hanging indent for bullets) + blank line + optional trailers
+    (Fixes #/BREAKING CHANGE:/! ; never Co-authored-by, never <5 lines, count
+    before emit). Do not mutate Git unless I give an unambiguous follow-up approval
+    of this exact plan; then revalidate first.
